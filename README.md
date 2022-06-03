@@ -13,7 +13,7 @@ To be added soon...
 ### Cells (tế bào)
 A cell is a basic, structural unit of all life forms.  
 There are **2** types of cells: **Prokaryotic cells** *(tế bào nhân sơ)* and **Eukaryotic cells** *(tế bào nhân thực)*.  
-The 2 types differ by the existence of **nuclei** *(nhân tế bào)*.  
+The 2 types differ by the completeness of **nuclei** *(nhân tế bào)*.  
 ### Cell cycle (chu kỳ tế bào)
 A cell cycle is the series of events that take place in a cell that cause it to divide into **two daughter cells**.  
 For **eukaryotes**, a cell cycle includes:
