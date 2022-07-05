@@ -1,14 +1,15 @@
-package application;
-	
+package application.screentests;
+
+import application.Main;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
+public class MenuScreenTest extends Application {
 
-public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception{
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/menu.fxml"));
@@ -20,7 +21,7 @@ public class Main extends Application {
         primaryStage.setTitle("Cell Application");
         primaryStage.show();
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
