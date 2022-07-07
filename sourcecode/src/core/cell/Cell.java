@@ -8,6 +8,4 @@ public abstract class Cell {
 	private String name;
 	private float length;
 	private ArrayList<Component> components;
-	
-	public
 }

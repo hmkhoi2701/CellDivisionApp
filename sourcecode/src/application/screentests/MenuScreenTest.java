@@ -9,7 +9,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class MenuScreenTest extends Application {
-
 	@Override
 	public void start(Stage primaryStage) throws Exception{
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/menu.fxml"));
