@@ -35,4 +35,8 @@ public abstract class Cell {
 		return components;
 	}
 	
+	public String getImgDir() {
+		return imgDir;
+	}
+	
 }

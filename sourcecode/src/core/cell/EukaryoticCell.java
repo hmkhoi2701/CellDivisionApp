@@ -11,6 +11,6 @@ public class EukaryoticCell extends Cell{
 		super(name);
 		this.growMethod = new Mitosis();
 		this.reproduceMethod = new Meiosis();
-		this.imgDir = super.imgDir + "/Eukaryotes/" + name;
+		this.imgDir = super.imgDir + "Eukaryotes/" + name;
 	}
 }

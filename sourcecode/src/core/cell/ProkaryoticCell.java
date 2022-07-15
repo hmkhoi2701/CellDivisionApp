@@ -11,6 +11,6 @@ public class ProkaryoticCell extends Cell{
 		super(name);
 		this.growMethod = new GrowThenFuse();
 		this.reproduceMethod = new Amitosis();
-		this.imgDir = super.imgDir + "/Prokaryotes/" + name;
+		this.imgDir = super.imgDir + "Prokaryotes/" + name;
 	}
 }

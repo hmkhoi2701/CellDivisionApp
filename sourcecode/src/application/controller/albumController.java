@@ -1,13 +1,14 @@
 package application.controller;
 
 import application.Main;
+import core.cell.Cell;
+import core.component.Component;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,13 +18,20 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class albumController implements Initializable {
-    public String s ;
-    public int k = 0 ;
+import java.io.IOException;
+import java.util.ArrayList;
+
+
+public class albumController {
+	private ArrayList<Cell>cells;
+	private ArrayList<Component>components;
+	private String imgDir;
+	private String name;
+	
+    private String s ;
+    private int k = 0 ;
+    private int max = 4;
     @FXML
     private ComboBox ListOfCell;
     @FXML
@@ -36,49 +44,32 @@ public class albumController implements Initializable {
 
     @FXML
     void prevImgBtnClicked(MouseEvent event) {
-        String j = "/guiImages/CellImages/Prokaryotes/";
-        String l = "/guiImages/CellImages/Eukaryotes/";
         nextImgBtn.setVisible(true);
 
         k -= 1 ;
-        if (k < 0) {
+        if (k <= 0) {
             k = 0;
             prevImgBtn.setVisible(false);
         }
-        if (s == "Fungi" | s == "Animals" |s =="Plants" |s =="Protist" ) {
-            Image myimage = new Image(getClass().getResourceAsStream(l+s+"/"+String.valueOf(k)+".png"),500, 500, false, false);
-            myImageView.setImage(myimage);
-        } else {
-            Image myimage = new Image(getClass().getResourceAsStream(j+s+"/"+String.valueOf(k)+".png"),500, 500, false, false);
-            myImageView.setImage(myimage);
-        }
+        Image myimage = new Image(getClass().getResourceAsStream(imgDir+"/"+String.valueOf(k)+".png"),600, 500, false, false);
+        myImageView.setImage(myimage);
+
 
     }
     @FXML
     void SelectCell(ActionEvent event) {
         s = ListOfCell.getSelectionModel().getSelectedItem().toString();
-        if (s =="AlbumView") {
-            String l = "/guiImages/CellImages/Eukaryotes/";
-            String j = "/guiImages/CellImages/Prokaryotes/";
-
-            if (s == "Fungi" | s == "Animals" | s == "Plants" | s == "Protist") {
-                k = 0;
-                prevImgBtn.setVisible(false);
-                nextImgBtn.setVisible(true);
-
-                Image myimage = new Image(getClass().getResourceAsStream(l + s + "/" + String.valueOf(k) + ".png"), 500, 500, false, false);
-                myImageView.setImage(myimage);
-            } else {
-                k = 0;
-                prevImgBtn.setVisible(false);
-                nextImgBtn.setVisible(true);
-
-                Image myimage = new Image(getClass().getResourceAsStream(j + s + "/" + String.valueOf(k) + ".png"), 500, 500, false, false);
-                myImageView.setImage(myimage);
-            }
-        } else {
+        if (s =="Album View") {
+	        k = 0;
+	        prevImgBtn.setVisible(false);
+	        nextImgBtn.setVisible(true);
+	        Image myimage = new Image(getClass().getResourceAsStream(imgDir+ "/" + String.valueOf(k) + ".png"), 600, 500, false, false);
+	        myImageView.setImage(myimage);
+        }
+        
+        else {
             try {
-                final String CART_FXML_FILE_PATH = "/application/view/protist.fxml";
+                final String CART_FXML_FILE_PATH = "/application/view/"+name+".fxml";
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(CART_FXML_FILE_PATH));
                 Parent root = fxmlLoader.load();
                 Scene scene = new Scene(root);
@@ -93,48 +84,43 @@ public class albumController implements Initializable {
     }
     @FXML
     void nextImgBtnCliked(MouseEvent event) {
-        String j = "/guiImages/CellImages/Prokaryotes/";
-        String l = "/guiImages/CellImages/Eukaryotes/";
         k += 1 ;
         prevImgBtn.setVisible(true);
-
-        if (s == "Fungi"  |s =="Protist" ) {
-            if (k >= 4) {
-                k = 4;
-                nextImgBtn.setVisible(false);
-
-            }
-            Image myimage = new Image(getClass().getResourceAsStream(l + s + "/" + String.valueOf(k) + ".png"),500, 500, false, false);
-            myImageView.setImage(myimage);
-        }else  if ( s == "Animals" ) {
-            if (k >= 5) {
-                k = 5;
-                nextImgBtn.setVisible(false);
-
-            }
-            Image myimage = new Image(getClass().getResourceAsStream(l + s + "/" + String.valueOf(k) + ".png"),500, 500, false, false);
-            myImageView.setImage(myimage);
-        }else if (s =="Plants"){
-            if (k >= 6) {
-                k = 6;
-                nextImgBtn.setVisible(false);
-
-            }
-            Image myimage = new Image(getClass().getResourceAsStream(l + s + "/" + String.valueOf(k) + ".png"),500, 500, false, false);
-            myImageView.setImage(myimage);
-        } else {
-            if (k >= 4) {
-                k = 4;
-                nextImgBtn.setVisible(false);
-            }
-            Image myimage = new Image(getClass().getResourceAsStream(j+s+"/"+String.valueOf(k)+".png"),500, 500, false, false);
-            myImageView.setImage(myimage);
+        if (k >= max) {
+            k = max;
+            nextImgBtn.setVisible(false);
+        }
+        Image myimage = new Image(getClass().getResourceAsStream(imgDir+"/"+String.valueOf(k)+".png"),600, 500, false, false);
+        myImageView.setImage(myimage);
 
         }
-    }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        ObservableList<String>list = FXCollections.observableArrayList("AlbumView","ComponentView");
+    
+    public void initialize() {
+        ObservableList<String>list = FXCollections.observableArrayList("Album View","Component View");
         ListOfCell.setItems(list);
+        ListOfCell.getSelectionModel().select(0);
+        Image myimage = new Image(getClass().getResourceAsStream(imgDir+"/"+String.valueOf(k)+".png"),600, 500, false, false);
+        myImageView.setImage(myimage);
+        prevImgBtn.setVisible(false);
+    }
+    @FXML
+    void backBtnClicked(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/chooseCellTypeMenu.fxml"));
+		chooseCellTypeController controller = new chooseCellTypeController(cells,components,"Comp");
+		loader.setController(controller);
+		Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.getIcons().add(new Image(Main.class.getResourceAsStream("/guiImages/5470363.png")));
+        stage.setScene(scene);
+        stage.setTitle("Cell Application");
+        stage.show();
+
+    }
+    public albumController(ArrayList<Cell>cells,ArrayList<Component>components,String imgDir, String name) {
+    	this.cells = cells;
+    	this.components = components;
+    	this.imgDir = imgDir;
+    	this.name = name;
     }
 }

@@ -38,6 +38,26 @@ public class chooseCellController {
     				cellName.setPrefSize(350, 53);
     				cellName.setMaxHeight(cellName.USE_PREF_SIZE);
     				cellName.setMaxWidth(cellName.USE_PREF_SIZE);
+    				
+    				cellName.setOnAction(event->{
+    					FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/album.fxml"));
+    		    		albumController controller = new albumController(cells,components,cell.getImgDir(),cell.getName());
+    		    		loader.setController(controller);
+    		    		Parent root = null;
+    					try {
+    						root = loader.load();
+    					} catch (IOException e) {
+    						// TODO Auto-generated catch block
+    						e.printStackTrace();
+    					}
+    		            Scene scene = new Scene(root);
+    		            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    		            stage.getIcons().add(new Image(Main.class.getResourceAsStream("/guiImages/5470363.png")));
+    		            stage.setScene(scene);
+    		            stage.setTitle("Cell Application");
+    		            stage.show();
+    				});
+    				
     				buttonBox.getChildren().add(cellName);
     			}
     		}
@@ -53,9 +73,28 @@ public class chooseCellController {
     				cellName.setMaxHeight(cellName.USE_PREF_SIZE);
     				cellName.setMaxWidth(cellName.USE_PREF_SIZE);
     				buttonBox.getChildren().add(cellName);
+    				
+    				cellName.setOnAction(event->{
+    					FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/album.fxml"));
+    		    		albumController controller = new albumController(cells,components,cell.getImgDir(),cell.getName());
+    		    		loader.setController(controller);
+    		    		Parent root = null;
+    					try {
+    						root = loader.load();
+    					} catch (IOException e) {
+    						// TODO Auto-generated catch block
+    						e.printStackTrace();
+    					}
+    		            Scene scene = new Scene(root);
+    		            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    		            stage.getIcons().add(new Image(Main.class.getResourceAsStream("/guiImages/5470363.png")));
+    		            stage.setScene(scene);
+    		            stage.setTitle("Cell Application");
+    		            stage.show();
+    				});
     			}
     		}
-    	}
+    	}    	
     	Button backBtn = new Button("BACK");
     	backBtn.setStyle("-fx-font-family: Lucida Bright; -fx-font-size: 18pt;"
 				+ "-fx-font-weight: Bold; -fx-background-color:  #FFDAB9; -fx-background-radius: 20");
