@@ -2,37 +2,39 @@ package core.cell;
 
 import java.util.ArrayList;
 
-import core.component.Component;
+/*import core.component.Component;
 import core.division.GrowMethod;
 import core.division.ReproduceMethod;
-import core.initializer.Initializer;
 
 public abstract class Cell {
 	private String name;
-	private ArrayList<Component> components = new ArrayList<Component>();
+	private String size;
+	private ArrayList<Component> components;
 	protected GrowMethod growMethod;
 	protected ReproduceMethod reproduceMethod;
 	protected String imgDir;
-	
-	public Cell(String name) {
+
+	public Cell(String name, String size) {
 		super();
 		this.name = name;
+		this.size = size;
 		this.imgDir = "/guiImages/CellImages/";
-		Initializer.getCellList().add(this);
 	}
-	
-	public void addComponent(Component[] toAdd) {
+
+	public void addComponent(ArrayList<Component> toAdd) {
 		for (Component component: toAdd) {
 			components.add(component);
 		}
 	}
-	
-	public String getName() {
-		return name;
+
+	public GrowMethod getGrowMethod() {
+		return growMethod;
 	}
 
-	public ArrayList<Component> getComponents() {
-		return components;
+	public ReproduceMethod getReproduceMethod() {
+		return reproduceMethod;
 	}
-	
-}
+
+
+
+}*/

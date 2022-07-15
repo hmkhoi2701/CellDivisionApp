@@ -78,7 +78,7 @@ public class albumController implements Initializable {
             }
         } else {
             try {
-                final String CART_FXML_FILE_PATH = "/application/view/components.fxml";
+                final String CART_FXML_FILE_PATH = "/application/view/protist.fxml";
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(CART_FXML_FILE_PATH));
                 Parent root = fxmlLoader.load();
                 Scene scene = new Scene(root);

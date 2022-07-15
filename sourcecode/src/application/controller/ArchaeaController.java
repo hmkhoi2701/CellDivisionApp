@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class componentsController implements Initializable {
+public class ArchaeaController implements Initializable {
     @FXML
     private ImageView myImageView1;
     @FXML
@@ -95,29 +95,28 @@ public class componentsController implements Initializable {
     @FXML
     void btnFlagellum(ActionEvent event) {
         myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Flagellum.jpg"));
+        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/Flagellum.jpg"));
         myImageView.setImage(myimage);
-        Capsule.setVisible(true);
     }
 
     @FXML
     void btnRibosomes(ActionEvent event) {
         myImageView1.setVisible(true);
-        Image myimage1 = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Ribosomes.jpg"));
+        Image myimage1 = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/Ribosome.jpg"));
         myImageView.setImage(myimage1);
     }
 
     @FXML
     void btnNucleoid(ActionEvent event) {
         myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Nucleoid.jpg"));
+        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/Nucleoid.jpg"));
         myImageView.setImage(myimage);
     }
 
     @FXML
     void btnCytoplasm(ActionEvent event) {
         myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Cytoplasm.jpg"));
+        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/Cytoplasm.jpg"));
         myImageView.setImage(myimage);
     }
 
@@ -125,21 +124,21 @@ public class componentsController implements Initializable {
     void btnPili(ActionEvent event) {
         myImageView1.setVisible(true);
 
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Pili.jpg"));
+        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/Pili.jpg"));
         myImageView.setImage(myimage);
     }
 
     @FXML
     void btnMesosome(ActionEvent event) {
         myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Mesosome.jpg"));
+        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/Mesosome.jpg"));
         myImageView.setImage(myimage);
     }
 
     @FXML
     void btnPlasmid(ActionEvent event) {
         myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Plasmid.jpg"));
+        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/Plasmid.jpg"));
         myImageView.setImage(myimage);
     }
 
@@ -147,7 +146,7 @@ public class componentsController implements Initializable {
     @FXML
     void btnPlasmaMembrane(ActionEvent event) {
         myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/PlasmaMembrane.jpg"));
+        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/PlasmaMembrane.jpg"));
         myImageView.setImage(myimage);
     }
 
@@ -156,15 +155,16 @@ public class componentsController implements Initializable {
     @FXML
     void btnCellWall(ActionEvent event) {
         myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/CellWall.jpg"));
+        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/CellWall.jpg"));
         myImageView.setImage(myimage);
     }
 
     @FXML
     void btnCapsule(ActionEvent event) {
         myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Capsule.jpg"));
+        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/Capsule.jpg"));
         myImageView.setImage(myimage);
     }
 
 }
+
