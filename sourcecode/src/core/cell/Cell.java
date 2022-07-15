@@ -38,5 +38,13 @@ public abstract class Cell {
 	public String getImgDir() {
 		return imgDir;
 	}
+
+	public GrowMethod getGrowMethod() {
+		return growMethod;
+	}
+
+	public ReproduceMethod getReproduceMethod() {
+		return reproduceMethod;
+	}
 	
 }

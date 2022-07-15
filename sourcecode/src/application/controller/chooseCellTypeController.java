@@ -47,6 +47,18 @@ public class chooseCellTypeController{
 	        stage.setTitle("Cell Application");
 	        stage.show();
     	}
+    	else if (prevChoice.equals("Div")) {
+    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/chooseDivisionTypeMenu.fxml"));
+	    	chooseDivisionController controller = new chooseDivisionController(cells,components,"Eu");
+	    	loader.setController(controller);
+			Parent root = loader.load();
+	        Scene scene = new Scene(root);
+	        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        stage.getIcons().add(new Image(Main.class.getResourceAsStream("/guiImages/5470363.png")));
+	        stage.setScene(scene);
+	        stage.setTitle("Cell Application");
+	        stage.show();
+    	}
     }
 
     @FXML
@@ -54,6 +66,18 @@ public class chooseCellTypeController{
     	if (prevChoice.equals("Comp")) {
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/chooseCellMenu.fxml"));
 	    	chooseCellController controller = new chooseCellController(cells,components,"Pro");
+	    	loader.setController(controller);
+			Parent root = loader.load();
+	        Scene scene = new Scene(root);
+	        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        stage.getIcons().add(new Image(Main.class.getResourceAsStream("/guiImages/5470363.png")));
+	        stage.setScene(scene);
+	        stage.setTitle("Cell Application");
+	        stage.show();
+    	}
+    	else if (prevChoice.equals("Div")) {
+    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/chooseDivisionTypeMenu.fxml"));
+	    	chooseDivisionController controller = new chooseDivisionController(cells,components,"Pro");
 	    	loader.setController(controller);
 			Parent root = loader.load();
 	        Scene scene = new Scene(root);

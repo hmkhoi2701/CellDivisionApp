@@ -1,6 +1,12 @@
 package application.controller;
 
 import application.Main;
+import application.controller.component.AnimalController;
+import application.controller.component.ArchaeaController;
+import application.controller.component.BacteriaController;
+import application.controller.component.FungiController;
+import application.controller.component.PlantController;
+import application.controller.component.ProtistController;
 import core.cell.Cell;
 import core.component.Component;
 import javafx.collections.FXCollections;
@@ -69,8 +75,32 @@ public class albumController {
         
         else {
             try {
-                final String CART_FXML_FILE_PATH = "/application/view/"+name+".fxml";
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(CART_FXML_FILE_PATH));
+                final String FXML_FILE_PATH = "/application/view/"+name+".fxml";
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(FXML_FILE_PATH));
+                if (name == "Animal") {
+                	AnimalController ctl = new AnimalController(cells,components);
+                	fxmlLoader.setController(ctl);
+                }
+                else if (name == "Plant"){
+                	PlantController ctl = new PlantController(cells,components);
+                	fxmlLoader.setController(ctl);
+                }
+                else if (name == "Fungi"){
+                	FungiController ctl = new FungiController(cells,components);
+                	fxmlLoader.setController(ctl);
+                }
+                else if (name == "Protist"){
+                	ProtistController ctl = new ProtistController(cells,components);
+                	fxmlLoader.setController(ctl);
+                }
+                else if (name == "Bacteria"){
+                	BacteriaController ctl = new BacteriaController(cells,components);
+                	fxmlLoader.setController(ctl);
+                }
+                else if (name == "Archaea"){
+                	ArchaeaController ctl = new ArchaeaController(cells,components);
+                	fxmlLoader.setController(ctl);
+                }
                 Parent root = fxmlLoader.load();
                 Scene scene = new Scene(root);
                 Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
