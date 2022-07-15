@@ -17,9 +17,6 @@ public class AlbumTest extends Application {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/album.fxml"));
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
-		primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("/guiImages/5470363.png")));
-
-		/*primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("guiImages/CellImages/Eukaryotes/Animals/0.png")));*/
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Image view");
 		primaryStage.show();
