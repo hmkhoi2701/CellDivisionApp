@@ -13,14 +13,14 @@ public abstract class Cell {
 	protected GrowMethod growMethod;
 	protected ReproduceMethod reproduceMethod;
 	protected String imgDir;
-	
+
 	public Cell(String name, String size) {
 		super();
 		this.name = name;
 		this.size = size;
 		this.imgDir = "/guiImages/CellImages/";
 	}
-	
+
 	public void addComponent(ArrayList<Component> toAdd) {
 		for (Component component: toAdd) {
 			components.add(component);
@@ -34,7 +34,7 @@ public abstract class Cell {
 	public ReproduceMethod getReproduceMethod() {
 		return reproduceMethod;
 	}
-	
-	
-	
+
+
+
 }
