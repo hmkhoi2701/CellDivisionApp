@@ -7,8 +7,8 @@ import core.division.ReproduceMethod;
 
 public class EukaryoticCell extends Cell{
 
-	public EukaryoticCell(String name, String size) {
-		super(name, size);
+	public EukaryoticCell(String name) {
+		super(name);
 		this.growMethod = new Mitosis();
 		this.reproduceMethod = new Meiosis();
 		this.imgDir = super.imgDir + "/Eukaryotes/" + name;

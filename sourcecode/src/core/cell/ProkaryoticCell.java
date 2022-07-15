@@ -7,8 +7,8 @@ import core.division.ReproduceMethod;
 
 public class ProkaryoticCell extends Cell{
 
-	public ProkaryoticCell(String name, String size) {
-		super(name, size);
+	public ProkaryoticCell(String name) {
+		super(name);
 		this.growMethod = new GrowThenFuse();
 		this.reproduceMethod = new Amitosis();
 		this.imgDir = super.imgDir + "/Prokaryotes/" + name;
