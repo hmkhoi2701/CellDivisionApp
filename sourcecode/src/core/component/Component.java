@@ -2,17 +2,17 @@ package core.component;
 
 import java.util.ArrayList;
 
-import core.storage.Storage;
+import core.initializer.Initializer;
 
 public class Component {
 	private String cName;
-	private String description;
+	private String function;
 	
 	public Component(String cName, String description) {
 		super();
 		this.cName = cName;
-		this.description = description;
-		Storage.componentStorage.add(this);
+		this.function = function;
+		Initializer.getComponentList().add(this);
 	}
 
 
@@ -21,7 +21,7 @@ public class Component {
 	}
 
 
-	public String getDescription() {
-		return description;
+	public String getFunction() {
+		return function;
 	}
 }
