@@ -12,6 +12,6 @@ public class Mitosis implements GrowMethod {
 	@Override
 	public Integer[] getKeyframes() {
 		// TODO Auto-generated method stub
-		return new Integer[] {0,47,64,72,99};
+		return new Integer[] {0,48,64,72,99};
 	}
 }

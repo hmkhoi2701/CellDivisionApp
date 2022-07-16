@@ -11,10 +11,13 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.awt.Desktop;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -65,7 +68,17 @@ public class menuController{
     }
 
     @FXML
-    void helpBtnPressed(ActionEvent event) {
+    void helpBtnPressed(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/album.fxml"));
+		albumController controller = new albumController(cells,components,"/guiImages/HelpImg","Help");
+		loader.setController(controller);
+		Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.getIcons().add(new Image(Main.class.getResourceAsStream("/guiImages/5470363.png")));
+        stage.setScene(scene);
+        stage.setTitle("Cell Application");
+        stage.show();
     }
 
     @FXML
@@ -78,6 +91,28 @@ public class menuController{
     	if(alert.showAndWait().get() == ButtonType.OK) {
     		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     		stage.close();
+    	}
+    }
+    
+    @FXML
+    void ytBtnClicked(MouseEvent event) {
+    	try {
+    	    Desktop.getDesktop().browse(new URL("https://youtu.be/XCg1tfyJsj4").toURI());
+    	} catch (IOException e) {
+    	    e.printStackTrace();
+    	} catch (URISyntaxException e) {
+    	    e.printStackTrace();
+    	}
+    }
+    
+    @FXML
+    void githubBtnClicked(MouseEvent event) {
+    	try {
+    	    Desktop.getDesktop().browse(new URL("https://github.com/hmkhoi2701/OOP.DSAI.20212.13").toURI());
+    	} catch (IOException e) {
+    	    e.printStackTrace();
+    	} catch (URISyntaxException e) {
+    	    e.printStackTrace();
     	}
     }
 

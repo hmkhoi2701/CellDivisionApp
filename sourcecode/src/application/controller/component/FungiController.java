@@ -28,8 +28,6 @@ import core.component.Component;
 public class FungiController {
 	private ArrayList<Cell>cells;
 	private ArrayList<Component>components;
-	private String imgDir;
-	private String name;
     @FXML
     private Button Nucleus;
 
@@ -112,8 +110,18 @@ public class FungiController {
         } else {
         }
     }
-
-    
+    private final String IMG_DIR = "/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/";
+    void adjustTF(String imgName, String cName) {
+        Image myimage = new Image(getClass().getResourceAsStream(IMG_DIR+imgName+".jpg"));
+        myImageView.setImage(myimage);
+        for (Component c: components) {
+            if (c.getcName().equals(cName)) {
+                nameLabel.setText(c.getcName());
+                functionLabel.setText(c.getFunction());
+                break;
+            }
+        }
+    }
     public void initialize() {
         ObservableList<String> list = FXCollections.observableArrayList("Album View","Component View");
         ListOfCell.setItems(list);
@@ -138,107 +146,91 @@ public class FungiController {
 
     @FXML
     void btnVesicles(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Vesicles.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Vesicles","Vesicles");
+
     }
 
     @FXML
     void btnSeptum(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Vesicles.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Septum","Septum");
+
     }
 
     @FXML
     void btnBudscar(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/BudScar.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Budscar","Bud Scar");
+
     }
 
     @FXML
     void btnLysosome(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Lysosome.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Lysosome","Lysosome");
+
     }
 
     @FXML
     void btnVacuole(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Vacuole.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Vacuole","Vacuole");
+
     }
 
     @FXML
     void btnCellwall(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Cellwall.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("CellWall","Cell Wall");
+
     }
 
     @FXML
     void btnCellMembrane(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/CellMembrane.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("CellMembrane","Plasma Membrane");
+
     }
 
     @FXML
     void btnEndoplasmicreticulum(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Endoplasmicreticulum.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Endoplasmicreticulum","Endoplasmic Reticulum");
+
     }
 
     @FXML
     void btnRibosomes(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Ribosomes.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Ribosomes", "Ribosomes");
+
     }
 
     @FXML
     void btnCytoplasm(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Cytoplasm.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Cytoplasm","Cytoplasm");
+
     }
 
     @FXML
     void btnMitochondrion(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Mitochondrion.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Mitochondrion","Mitochondrion");
+
     }
 
     @FXML
     void btnPeroxisome(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Peroxisome.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Peroxisome","Peroxisome");
+
     }
 
     @FXML
     void btnNucleolus(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Nucleolus.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Nucleolus","Nucleolus");
+
     }
 
     @FXML
     void btnNucleusx(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Nucleux.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Nucleus","Nucleus");
+
     }
 
     @FXML
     void btnGolgiapparatus(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Golgiapparatus.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("GolgiApparatus","Golgi");
     }
     
     public FungiController(ArrayList<Cell>cells,ArrayList<Component>components) {

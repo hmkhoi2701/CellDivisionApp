@@ -144,26 +144,38 @@ public class MediaPlayerController{
     void BackStep(ActionEvent event) {
     	double currTime = progressBar.getValue();
         if (reproduceMethod == null) {
-        	for (int i = 0; i<growMethod.getKeyframes().length;i++) {
-        		if (currTime-growMethod.getKeyframes()[i]<0.5) {
-        			mediaPlayer.seek(javafx.util.Duration.seconds(growMethod.getKeyframes()[i-1]));
+        	for (int i = 0; i<=growMethod.getKeyframes().length;i++) {
+        		if (i==growMethod.getKeyframes().length) {
+        			mediaPlayer.seek(javafx.util.Duration.seconds(growMethod.getKeyframes()[i-2]));
         			break;
         		}
-        		if (i==growMethod.getKeyframes().length-1) {
-        			mediaPlayer.seek(javafx.util.Duration.seconds(growMethod.getKeyframes()[i-1]));
-        			break;
+        		if (currTime>=growMethod.getKeyframes()[i]) {}
+        		else {
+        			if (i<=2) {
+        				mediaPlayer.seek(javafx.util.Duration.seconds(growMethod.getKeyframes()[0]));
+        			}
+        			else {
+        				mediaPlayer.seek(javafx.util.Duration.seconds(growMethod.getKeyframes()[i-2]));
+        			}
+        		break;
         		}
         	}
         }
         else {
-        	for (int i = 0; i<reproduceMethod.getKeyframes().length;i++) {
-        		if (currTime-reproduceMethod.getKeyframes()[i]<0.5) {
-        			mediaPlayer.seek(javafx.util.Duration.seconds(reproduceMethod.getKeyframes()[i-1]));
+        	for (int i = 0; i<=reproduceMethod.getKeyframes().length;i++) {
+        		if (i==reproduceMethod.getKeyframes().length) {
+        			mediaPlayer.seek(javafx.util.Duration.seconds(reproduceMethod.getKeyframes()[i-2]));
         			break;
         		}
-        		if (i==reproduceMethod.getKeyframes().length-1) {
-        			mediaPlayer.seek(javafx.util.Duration.seconds(reproduceMethod.getKeyframes()[i-1]));
-        			break;
+        		if (currTime>=reproduceMethod.getKeyframes()[i]) {}
+        		else {
+        			if (i<=2) {
+        				mediaPlayer.seek(javafx.util.Duration.seconds(reproduceMethod.getKeyframes()[0]));
+        			}
+        			else {
+        				mediaPlayer.seek(javafx.util.Duration.seconds(reproduceMethod.getKeyframes()[i-2]));
+        			}
+        		break;
         		}
         	}
         }

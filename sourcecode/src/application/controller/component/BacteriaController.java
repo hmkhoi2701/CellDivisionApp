@@ -5,7 +5,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,13 +13,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import application.Main;
 import application.controller.albumController;
@@ -31,7 +27,7 @@ import core.component.Component;
 public class BacteriaController {
 	private ArrayList<Cell>cells;
 	private ArrayList<Component>components;
-
+	private final String IMG_DIR = "/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/";
     @FXML
     private ComboBox<String> ListOfCell;
     @FXML
@@ -108,6 +104,18 @@ public class BacteriaController {
         stage.show();
     }
     
+    void adjustTF(String imgName, String cName) {
+        Image myimage = new Image(getClass().getResourceAsStream(IMG_DIR+imgName+".jpg"));
+        myImageView.setImage(myimage);
+    	for (Component c: components) {
+        	if (c.getcName().equals(cName)) {
+        		nameLabel.setText(c.getcName());
+        		functionLabel.setText(c.getFunction());
+        		break;
+        	}
+        }
+    }
+    
     public void initialize() {
         ObservableList<String> list = FXCollections.observableArrayList("Album View","Component View");
         ListOfCell.setItems(list);
@@ -118,76 +126,55 @@ public class BacteriaController {
     }
     @FXML
     void btnFlagellum(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Flagellum.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Flagellum","Flagellum");
     }
 
     @FXML
     void btnRibosomes(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage1 = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Ribosomes.jpg"));
-        myImageView.setImage(myimage1);
+        adjustTF("Ribosomes","Ribosomes");
     }
 
     @FXML
     void btnNucleoid(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Nucleoid.jpg"));
-        myImageView.setImage(myimage);
+    	adjustTF("Nucleoid","Nucleoid");
     }
 
     @FXML
     void btnCytoplasm(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Cytoplasm.jpg"));
-        myImageView.setImage(myimage);
+    	adjustTF("Cytoplasm","Cytoplasm");
     }
 
     @FXML
     void btnPili(ActionEvent event) {
-        myImageView1.setVisible(true);
-
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Pili.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Pili","Pili");
     }
 
     @FXML
     void btnMesosome(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Mesosome.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Mesosome","Mesosome");
     }
 
     @FXML
     void btnPlasmid(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Plasmid.jpg"));
-        myImageView.setImage(myimage);
+    	adjustTF("Plasmid","Plasmid");
     }
 
 
     @FXML
     void btnPlasmaMembrane(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/PlasmaMembrane.jpg"));
-        myImageView.setImage(myimage);
+    	adjustTF("PlasmaMembrane","Plasma Membrane");
     }
 
 
 
     @FXML
     void btnCellWall(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/CellWall.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("CellWall","Cell Wall");
     }
 
     @FXML
     void btnCapsule(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Bacteria/BacteriaComponents/Capsule.jpg"));
-        myImageView.setImage(myimage);
+    	 adjustTF("Capsule","Capsule");
     }
     
     public BacteriaController(ArrayList<Cell>cells,ArrayList<Component>components) {

@@ -24,8 +24,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 
@@ -112,6 +112,7 @@ public class albumController {
 
         }
     }
+    
     @FXML
     void nextImgBtnCliked(MouseEvent event) {
         k += 1 ;
@@ -132,12 +133,24 @@ public class albumController {
         Image myimage = new Image(getClass().getResourceAsStream(imgDir+"/"+String.valueOf(k)+".png"),600, 500, false, false);
         myImageView.setImage(myimage);
         prevImgBtn.setVisible(false);
+        if (name.equals("Help")) {
+        	ListOfCell.setDisable(true);
+        	ListOfCell.setVisible(false);
+        }
     }
     @FXML
     void backBtnClicked(ActionEvent event) throws IOException {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/view/chooseCellTypeMenu.fxml"));
-		chooseCellTypeController controller = new chooseCellTypeController(cells,components,"Comp");
-		loader.setController(controller);
+    	FXMLLoader loader;
+    	if (name.equals("Help")) {
+    		loader = new FXMLLoader(getClass().getResource("/application/view/menu.fxml"));
+    		menuController controller = new menuController(cells,components);
+    		loader.setController(controller);
+    	}
+    	else {
+    		loader = new FXMLLoader(getClass().getResource("/application/view/chooseCellTypeMenu.fxml"));
+    		chooseCellTypeController controller = new chooseCellTypeController(cells,components,"Comp");
+    		loader.setController(controller);
+    	}		
 		Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

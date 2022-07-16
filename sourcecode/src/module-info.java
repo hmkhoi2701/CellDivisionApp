@@ -4,6 +4,7 @@ module CellApp {
 	requires javafx.graphics;
 	requires javafx.base;
 	requires javafx.media;
+	requires java.desktop;
 	
 	opens application to javafx.graphics, javafx.fxml;
 	opens application.controller to javafx.graphics, javafx.fxml;
