@@ -1,5 +1,6 @@
 # OOP.DSAI.20212.13
 A project on **Demonstration of types of cell division**, class DSAI, course Object-Oriented Programming, semester 20212.  
+![](https://imgur.com/a/TRHEhp1)
 ## Members
 - Trần Ngọc Khánh 20200326 - [@khanhtn2301](https://github.com/khanhtn2301)
 - Trần Quốc Khánh 20204881 - [@khanha2k46pbc](https://github.com/khanha2k46pbc)
@@ -7,7 +8,7 @@ A project on **Demonstration of types of cell division**, class DSAI, course Obj
 - Hồ Minh Khôi 20204917 - [@hmkhoi2701](https://github.com/hmkhoi2701)
 
 ## Demo
-To be added soon...
+![](https://www.youtube.com/watch?v=XCg1tfyJsj4)
 
 ## Basic knowledge about our project
 ### Cells (tế bào)
