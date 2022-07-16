@@ -60,9 +60,6 @@ public class ProtistController{
     private Button Macronucleus;
 
     @FXML
-    private ImageView myImageView1;
-
-    @FXML
     private Button Micronucleus;
 
     @FXML
@@ -117,6 +114,8 @@ public class ProtistController{
         ListOfCell.setItems(list);
         functionLabel.setText("");
         nameLabel.setText("");
+        functionLabel.setWrapText(true);
+        functionLabel.setMaxWidth(550);
     }
     @FXML
     void btnAnteriorContractileVacuole(ActionEvent event) {

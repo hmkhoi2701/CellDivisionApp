@@ -8,7 +8,7 @@ public class Component {
 	private String cName;
 	private String function;
 	
-	public Component(String cName, String description) {
+	public Component(String cName, String function) {
 		super();
 		this.cName = cName;
 		this.function = function;

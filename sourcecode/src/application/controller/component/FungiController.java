@@ -82,9 +82,6 @@ public class FungiController {
     private Button Endoplasmicreticulum;
 
     @FXML
-    private ImageView myImageView1;
-
-    @FXML
     private Button Peroxisome;
 
     @FXML
@@ -122,6 +119,8 @@ public class FungiController {
         ListOfCell.setItems(list);
         functionLabel.setText("");
         nameLabel.setText("");
+        functionLabel.setWrapText(true);
+        functionLabel.setMaxWidth(550);
     }
     @FXML
     void backbutton(ActionEvent event) throws IOException {

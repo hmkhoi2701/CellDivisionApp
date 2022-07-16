@@ -98,9 +98,11 @@ public class Initializer {
 				"site of ribosome biogenesis");
 		Component chromatin = new Component("Chromatin",
 				"package long DNA molecules into more compact, denser structures");
+		Component centrosome = new Component("Centrosome",
+				"main microtubule organizing center of the animal cell");
 		
 		Component[]addtoAnimal = new Component[] {ribosomes,plasmaMembrane,cytoplasm,microtubules,
-				peroxisome,vacuole,endoplasmicReticulum,mitochondria,lysosome,golgi,nucleus,nucleolus,chromatin};
+				peroxisome,vacuole,endoplasmicReticulum,mitochondria,lysosome,golgi,nucleus,nucleolus,chromatin,centrosome};
 		Component[]addtoPlant = new Component[] {ribosomes,plasmaMembrane,cytoplasm,microtubules,cellWall,
 				peroxisome,vacuole,endoplasmicReticulum,mitochondria,lysosome,golgi,nucleus,nucleolus,
 				granules,amyloplast,chloroplast,vacouleMembrane,intermediateFilaments};

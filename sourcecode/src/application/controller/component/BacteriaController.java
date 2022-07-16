@@ -31,8 +31,7 @@ import core.component.Component;
 public class BacteriaController {
 	private ArrayList<Cell>cells;
 	private ArrayList<Component>components;
-    @FXML
-    private ImageView myImageView1;
+
     @FXML
     private ComboBox<String> ListOfCell;
     @FXML
@@ -114,6 +113,8 @@ public class BacteriaController {
         ListOfCell.setItems(list);
         functionLabel.setText("");
         nameLabel.setText("");
+        functionLabel.setWrapText(true);
+        functionLabel.setMaxWidth(550);
     }
     @FXML
     void btnFlagellum(ActionEvent event) {

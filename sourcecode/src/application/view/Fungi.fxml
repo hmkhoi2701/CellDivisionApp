@@ -14,9 +14,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
-      <HBox alignment="CENTER" prefHeight="128.0" prefWidth="886.0" BorderPane.alignment="CENTER">
+      <HBox alignment="TOP_CENTER" prefHeight="128.0" prefWidth="886.0" BorderPane.alignment="CENTER">
          <children>
-            <ComboBox fx:id="ListOfCell" onAction="#SelectCell" prefHeight="50.0" prefWidth="200.0" promptText="Select mode" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;">
+            <ComboBox fx:id="ListOfCell" onAction="#SelectCell" prefHeight="30.0" prefWidth="200.0" promptText="Select mode" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;">
                <HBox.margin>
                   <Insets left="20.0" right="10.0" />
                </HBox.margin>
@@ -28,7 +28,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="64.0" text="Function:">
+                  <Label layoutX="14.0" layoutY="41.0" text="Function:">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -38,17 +38,17 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="functionLabel" layoutX="100.0" layoutY="64.0" text="functionLabel">
+                  <Label fx:id="functionLabel" layoutX="100.0" layoutY="41.0" text="functionLabel">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                </children>
                <HBox.margin>
-                  <Insets />
+                  <Insets bottom="5.0" />
                </HBox.margin>
             </Pane>
-            <Button fx:id="back" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backbutton" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;" text="Back">
+            <Button fx:id="back" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backbutton" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;" text="Back">
                <HBox.margin>
                   <Insets left="10.0" right="20.0" />
                </HBox.margin>
@@ -62,30 +62,25 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="myImageView" blendMode="MULTIPLY" fitHeight="522.0" fitWidth="742.0" layoutX="243.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="myImageView" blendMode="MULTIPLY" fitHeight="624.0" fitWidth="648.0" layoutX="243.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Fungi.jpg" />
                </image></ImageView>
-            <ImageView fx:id="myImageView1" blendMode="MULTIPLY" fitHeight="522.0" fitWidth="742.0" layoutX="243.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" visible="false">
-               <image>
-                  <Image url="@../../guiImages/CellImages/Eukaryotes/Fungi/FungiComponent/Cytoplasm.jpg" />
-               </image>
-            </ImageView>
-            <Button fx:id="Vesicles" blendMode="MULTIPLY" layoutX="574.0" layoutY="115.0" mnemonicParsing="false" onAction="#btnVesicles" opacity="0.0" prefHeight="20.0" prefWidth="81.0" text="Button" />
-            <Button fx:id="Septum" blendMode="MULTIPLY" layoutX="574.0" layoutY="249.0" mnemonicParsing="false" onAction="#btnSeptum" opacity="0.0" prefHeight="22.0" prefWidth="72.0" text="Button" />
-            <Button fx:id="Budscar" layoutX="577.0" layoutY="484.0" mnemonicParsing="false" onAction="#btnBudscar" opacity="0.0" prefHeight="29.0" prefWidth="59.0" text="Button" />
-            <Button fx:id="Lysosome" layoutX="373.0" layoutY="440.0" mnemonicParsing="false" onAction="#btnLysosome" opacity="0.0" prefHeight="8.0" prefWidth="55.0" text="Button" />
-            <Button fx:id="Vacuole" layoutX="585.0" layoutY="442.0" mnemonicParsing="false" onAction="#btnVacuole" opacity="0.0" prefHeight="27.0" prefWidth="40.0" text="Button" />
-            <Button fx:id="Cellwall" layoutX="366.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnCellwall" opacity="0.0" prefHeight="25.0" prefWidth="60.0" text="Button" />
-            <Button fx:id="CellMembrane" layoutX="348.0" layoutY="294.0" mnemonicParsing="false" onAction="#btnCellMembrane" opacity="0.0" prefHeight="34.0" prefWidth="74.0" text="Button" />
-            <Button fx:id="Endoplasmicreticulum" layoutX="348.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnEndoplasmicreticulum" opacity="0.0" prefHeight="18.0" prefWidth="81.0" text="Button" />
-            <Button fx:id="Ribosomes" blendMode="MULTIPLY" layoutX="585.0" layoutY="316.0" mnemonicParsing="false" onAction="#btnRibosomes" opacity="0.0" prefHeight="28.0" prefWidth="57.0" text="Button" />
-            <Button fx:id="Cytoplasm" blendMode="MULTIPLY" layoutX="586.0" layoutY="421.0" minHeight="10.0" mnemonicParsing="false" onAction="#btnCytoplasm" opacity="0.0" prefHeight="10.0" prefWidth="57.0" text="Button" />
-            <Button fx:id="Mitochondrion" blendMode="MULTIPLY" layoutX="582.0" layoutY="354.0" mnemonicParsing="false" onAction="#btnMitochondrion" opacity="0.0" prefHeight="7.0" prefWidth="75.0" text="Button" />
-            <Button fx:id="Peroxisome" blendMode="MULTIPLY" layoutX="589.0" layoutY="395.0" minHeight="12.0" mnemonicParsing="false" onAction="#btnPeroxisome" opacity="0.0" prefHeight="12.0" prefWidth="67.0" text="Button" />
-            <Button fx:id="Nucleolus" blendMode="MULTIPLY" layoutX="357.0" layoutY="375.0" minHeight="12.0" mnemonicParsing="false" onAction="#btnNucleolus" opacity="0.0" prefHeight="12.0" prefWidth="67.0" text="Button" />
-            <Button fx:id="Nucleus" blendMode="MULTIPLY" layoutX="362.0" layoutY="400.0" minHeight="12.0" mnemonicParsing="false" onAction="#btnNucleusx" opacity="0.0" prefHeight="12.0" prefWidth="67.0" text="Button" />
-            <Button fx:id="Golgiapparatus" blendMode="MULTIPLY" layoutX="588.0" layoutY="294.0" minHeight="12.0" mnemonicParsing="false" onAction="#btnGolgiapparatus" opacity="0.0" prefHeight="12.0" prefWidth="67.0" text="Button" />
+            <Button fx:id="Vesicles" blendMode="MULTIPLY" layoutX="636.0" layoutY="81.0" mnemonicParsing="false" onAction="#btnVesicles" opacity="0.0" prefHeight="20.0" prefWidth="81.0" text="Button" />
+            <Button fx:id="Septum" blendMode="MULTIPLY" layoutX="636.0" layoutY="232.0" mnemonicParsing="false" onAction="#btnSeptum" opacity="0.0" prefHeight="22.0" prefWidth="72.0" text="Button" />
+            <Button fx:id="Budscar" layoutX="643.0" layoutY="525.0" mnemonicParsing="false" onAction="#btnBudscar" opacity="0.0" prefHeight="29.0" prefWidth="59.0" text="Button" />
+            <Button fx:id="Lysosome" layoutX="395.0" layoutY="458.0" mnemonicParsing="false" onAction="#btnLysosome" opacity="0.0" prefHeight="31.0" prefWidth="63.0" text="Button" />
+            <Button fx:id="Vacuole" layoutX="643.0" layoutY="465.0" mnemonicParsing="false" onAction="#btnVacuole" opacity="0.0" prefHeight="31.0" prefWidth="58.0" text="Button" />
+            <Button fx:id="Cellwall" layoutX="405.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnCellwall" opacity="0.0" prefHeight="25.0" prefWidth="60.0" text="Button" />
+            <Button fx:id="CellMembrane" layoutX="359.0" layoutY="289.0" mnemonicParsing="false" onAction="#btnCellMembrane" opacity="0.0" prefHeight="34.0" prefWidth="101.0" text="Button" />
+            <Button fx:id="Endoplasmicreticulum" layoutX="369.0" layoutY="339.0" mnemonicParsing="false" onAction="#btnEndoplasmicreticulum" opacity="0.0" prefHeight="37.0" prefWidth="91.0" text="Button" />
+            <Button fx:id="Ribosomes" blendMode="MULTIPLY" layoutX="648.0" layoutY="324.0" mnemonicParsing="false" onAction="#btnRibosomes" opacity="0.0" prefHeight="31.0" prefWidth="70.0" text="Button" />
+            <Button fx:id="Cytoplasm" blendMode="MULTIPLY" layoutX="648.0" layoutY="440.0" minHeight="10.0" mnemonicParsing="false" onAction="#btnCytoplasm" opacity="0.0" prefHeight="18.0" prefWidth="68.0" text="Button" />
+            <Button fx:id="Mitochondrion" blendMode="MULTIPLY" layoutX="645.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnMitochondrion" opacity="0.0" prefHeight="31.0" prefWidth="91.0" text="Button" />
+            <Button fx:id="Peroxisome" blendMode="MULTIPLY" layoutX="650.0" layoutY="405.0" minHeight="12.0" mnemonicParsing="false" onAction="#btnPeroxisome" opacity="0.0" prefHeight="19.0" prefWidth="67.0" text="Button" />
+            <Button fx:id="Nucleolus" blendMode="MULTIPLY" layoutX="393.0" layoutY="379.0" minHeight="12.0" mnemonicParsing="false" onAction="#btnNucleolus" opacity="0.0" prefHeight="24.0" prefWidth="67.0" text="Button" />
+            <Button fx:id="Nucleus" blendMode="MULTIPLY" layoutX="402.0" layoutY="410.0" minHeight="12.0" mnemonicParsing="false" onAction="#btnNucleusx" opacity="0.0" prefHeight="24.0" prefWidth="67.0" text="Button" />
+            <Button fx:id="Golgiapparatus" blendMode="MULTIPLY" layoutX="650.0" layoutY="287.0" minHeight="12.0" mnemonicParsing="false" onAction="#btnGolgiapparatus" opacity="0.0" prefHeight="25.0" prefWidth="92.0" text="Button" />
          </children>
       </AnchorPane>
    </center>

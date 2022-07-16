@@ -71,9 +71,6 @@ public class PlantController{
     private Button VacuoleMembrane;
 
     @FXML
-    private ImageView myImageView1;
-
-    @FXML
     private Button Chloroplast;
 
     @FXML
@@ -148,6 +145,8 @@ public class PlantController{
         ListOfCell.setItems(list);
         functionLabel.setText("");
         nameLabel.setText("");
+        functionLabel.setWrapText(true);
+        functionLabel.setMaxWidth(550);
     }
     @FXML
     void btnMitochondria(ActionEvent event) {

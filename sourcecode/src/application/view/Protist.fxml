@@ -14,9 +14,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
-      <HBox alignment="CENTER" prefHeight="128.0" prefWidth="886.0" BorderPane.alignment="CENTER">
+      <HBox alignment="TOP_CENTER" prefHeight="128.0" prefWidth="886.0" BorderPane.alignment="CENTER">
          <children>
-            <ComboBox fx:id="ListOfCell" onAction="#SelectCell" prefHeight="50.0" prefWidth="200.0" promptText="Select mode" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;">
+            <ComboBox fx:id="ListOfCell" onAction="#SelectCell" prefHeight="30.0" prefWidth="200.0" promptText="Select mode" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;">
                <HBox.margin>
                   <Insets left="20.0" right="10.0" />
                </HBox.margin>
@@ -28,7 +28,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="64.0" text="Function:">
+                  <Label layoutX="14.0" layoutY="41.0" text="Function:">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -38,17 +38,17 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="functionLabel" layoutX="100.0" layoutY="64.0" text="functionLabel">
+                  <Label fx:id="functionLabel" layoutX="100.0" layoutY="41.0" text="functionLabel">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                </children>
                <HBox.margin>
-                  <Insets />
+                  <Insets bottom="5.0" />
                </HBox.margin>
             </Pane>
-            <Button fx:id="back" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backbutton" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;" text="Back">
+            <Button fx:id="back" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backbutton" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;" text="Back">
                <HBox.margin>
                   <Insets left="10.0" right="20.0" />
                </HBox.margin>
@@ -66,11 +66,6 @@
                <image>
                   <Image url="@../../guiImages/CellImages/Eukaryotes/Protist/ProtistComponent/Protist.jpg" />
                </image></ImageView>
-            <ImageView fx:id="myImageView1" blendMode="MULTIPLY" fitHeight="638.0" fitWidth="648.0" layoutX="212.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" visible="false">
-               <image>
-                  <Image url="@../../guiImages/CellImages/Eukaryotes/Protist/ProtistComponent/ProtistBW.jpg" />
-               </image>
-            </ImageView>
             <Button fx:id="AnteriorContractileVacuole" blendMode="MULTIPLY" layoutX="505.0" layoutY="34.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#btnAnteriorContractileVacuole" opacity="0.0" prefHeight="59.0" prefWidth="82.0" text="Button" />
             <Button fx:id="Cilia" blendMode="MULTIPLY" layoutX="467.0" layoutY="99.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#btnCilia" opacity="0.0" prefHeight="22.0" prefWidth="38.0" text="Button" />
             <Button fx:id="FoodVacuole" blendMode="MULTIPLY" layoutX="397.0" layoutY="157.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#btnFoodVacuole" opacity="0.0" prefHeight="22.0" prefWidth="105.0" text="Button" />

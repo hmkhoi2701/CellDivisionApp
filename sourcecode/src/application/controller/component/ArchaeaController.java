@@ -31,8 +31,7 @@ import core.component.Component;
 public class ArchaeaController{
 	private ArrayList<Cell>cells;
 	private ArrayList<Component>components;
-    @FXML
-    private ImageView myImageView1;
+
     @FXML
     private ComboBox<String> ListOfCell;
     @FXML
@@ -113,6 +112,8 @@ public class ArchaeaController{
         ListOfCell.setItems(list);
         functionLabel.setText("");
         nameLabel.setText("");
+        functionLabel.setWrapText(true);
+        functionLabel.setMaxWidth(550);
     }
     @FXML
     void btnFlagellum(ActionEvent event) {
@@ -124,7 +125,7 @@ public class ArchaeaController{
     @FXML
     void btnRibosomes(ActionEvent event) {
         myImageView1.setVisible(true);
-        Image myimage1 = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/Ribosome.jpg"));
+        Image myimage1 = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Prokaryotes/Archaea/ArchaeaComponents/Ribosomes.jpg"));
         myImageView.setImage(myimage1);
     }
 

@@ -15,6 +15,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -37,6 +38,9 @@ public class AnimalController {
     private Button Nucleus;
 
     @FXML
+    private Pane textPane;
+    
+    @FXML
     private Button Mitochondria;
     @FXML
     private Button Reticulum;
@@ -46,8 +50,7 @@ public class AnimalController {
 
     @FXML
     private ImageView myImageView;
-    @FXML
-    private ImageView myImageView1;
+
     @FXML
     private Button Ribosomes;
 
@@ -81,7 +84,7 @@ public class AnimalController {
     @FXML
     private Button Microtubules;
 
-
+    private final String IMG_DIR = "/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/";
 
     @FXML
     private Button Peroxisome;
@@ -101,7 +104,7 @@ public class AnimalController {
     @FXML
     private Label nameLabel;
 
-
+    
 
     @FXML
     void backbutton(ActionEvent event) throws IOException {
@@ -116,122 +119,95 @@ public class AnimalController {
         stage.setTitle("Cell Application");
         stage.show();
     }
-
+    
+    void adjustTF(String imgName, String cName) {
+        Image myimage = new Image(getClass().getResourceAsStream(IMG_DIR+imgName+".jpg"));
+        myImageView.setImage(myimage);
+    	for (Component c: components) {
+        	if (c.getcName().equals(cName)) {
+        		nameLabel.setText(c.getcName());
+        		functionLabel.setText(c.getFunction());
+        		break;
+        	}
+        }
+    }
+    
     @FXML
     void btnRibosomes(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Ribosomes.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Ribosomes", "Ribosomes");
     }
 
     @FXML
     void btnNucleus(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Nucleus.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Nucleus","Nucleus");
     }
 
     @FXML
     void btnNucleolus(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Nucleolus.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Nucleolus","Nucleolus");
     }
 
     @FXML
     void btnLysosome(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Lysosome.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Lysosome","Lysosome");
     }
     @FXML
     void btnMitochondria(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Mitochondria.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Mitochondria","Mitochondria");
     }
     @FXML
     void btnCytoplasm(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Cytoplasm.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Cytoplasm","Cytoplasm");
     }
 
     @FXML
     void btnMicrotubules(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image((getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Microtubules.jpg")));
-        myImageView.setImage(myimage);
+        adjustTF("Microtubules","Microtubules");
     }
 
     @FXML
     void btnPeroxisome(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Peroxisome.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Peroxisome","Peroxisome");
     }
 
     @FXML
     void btnSmoothEndoplasmicReticulum(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/SmoothEndoplasmicReticulum.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("SmoothEndoplasmicReticulum","Endoplasmic Reticulum");
     }
 
     @FXML
     void btnChromatin(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Chromatin.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Chromatin","Chromatin");
     }
 
     @FXML
     void btnCellMembrane(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/CellMembrane.jpg"));
-        myImageView.setImage(myimage);
-    }
-
-    @FXML
-    void btnReticulum(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Reticulum.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("CellMembrane","Plasma Membrane");
     }
 
     @FXML
     void btnRoughEndoplasmicReticulum(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/RoughEndoplasmicReticulum.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("RoughEndoplasmicReticulum","Endoplasmic Reticulum");
     }
 
     @FXML
     void btnCentrosome(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Centrosome.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Centrosome","Centrosome");
     }
 
     @FXML
     void btnVacuole(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/Vacuole.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("Vacuole","Vacuole");
     }
 
     @FXML
     void btnGolgiVesicle(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/GolgiVesicle.jpg"));
-        myImageView.setImage(myimage);
+        adjustTF("GolgiVesicle","Golgi");
     }
 
     @FXML
     void btnGolgiApparatus(ActionEvent event) {
-        myImageView1.setVisible(true);
-        Image myimage = new Image(getClass().getResourceAsStream("/guiImages/CellImages/Eukaryotes/Animal/AnimalComponent/GolgiApparatus.jpg"));
-        myImageView.setImage(myimage);
+    	adjustTF("GolgiApparatus","Golgi");
     }
 
     public void initialize() {
@@ -239,6 +215,8 @@ public class AnimalController {
         ListOfCell.setItems(list);
         functionLabel.setText("");
         nameLabel.setText("");
+        functionLabel.setWrapText(true);
+        functionLabel.setMaxWidth(550);
     }
     @FXML
     void SelectCell(ActionEvent event) {

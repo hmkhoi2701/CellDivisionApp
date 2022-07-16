@@ -14,9 +14,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
-      <HBox alignment="CENTER" prefHeight="128.0" prefWidth="886.0" BorderPane.alignment="CENTER">
+      <HBox alignment="TOP_CENTER" prefHeight="128.0" prefWidth="886.0" BorderPane.alignment="CENTER">
          <children>
-            <ComboBox fx:id="ListOfCell" onAction="#SelectCell" prefHeight="50.0" prefWidth="200.0" promptText="Select mode" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;">
+            <ComboBox fx:id="ListOfCell" onAction="#SelectCell" prefHeight="30.0" prefWidth="200.0" promptText="Select mode" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;">
                <HBox.margin>
                   <Insets left="20.0" right="10.0" />
                </HBox.margin>
@@ -28,7 +28,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="64.0" text="Function:">
+                  <Label layoutX="14.0" layoutY="41.0" text="Function:">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -38,17 +38,20 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="functionLabel" layoutX="100.0" layoutY="64.0" text="functionLabel">
+                  <Label fx:id="functionLabel" layoutX="100.0" layoutY="41.0" text="functionLabel">
                      <font>
                         <Font size="18.0" />
                      </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
                   </Label>
                </children>
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Pane>
-            <Button fx:id="back" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backbutton" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;" text="Back">
+            <Button fx:id="back" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backbutton" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #FFDAB9; -fx-background-radius: 10;" text="Back">
                <HBox.margin>
                   <Insets left="10.0" right="20.0" />
                </HBox.margin>
@@ -66,11 +69,6 @@
                <image>
                   <Image url="@../../guiImages/CellImages/Eukaryotes/Plant/PlantComponent/Plant.jpg" />
                </image></ImageView>
-            <ImageView fx:id="myImageView1" blendMode="MULTIPLY" fitHeight="638.0" fitWidth="648.0" layoutX="193.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" visible="false">
-               <image>
-                  <Image url="@../../guiImages/CellImages/Eukaryotes/Plant/PlantComponent/PlantBW.jpg" />
-               </image>
-            </ImageView>
             <Button fx:id="Mitochondria" blendMode="MULTIPLY" layoutX="730.0" layoutY="433.0" minHeight="10.0" mnemonicParsing="false" onAction="#btnMitochondria" opacity="0.0" prefHeight="11.0" prefWidth="70.0" text="Button" />
             <Button fx:id="Lysosome" blendMode="MULTIPLY" layoutX="730.0" layoutY="412.0" minHeight="9.0" mnemonicParsing="false" onAction="#btnLysosome" opacity="0.0" prefHeight="9.0" prefWidth="53.0" text="Button" />
             <Button fx:id="GolgiApparatus" blendMode="MULTIPLY" layoutX="730.0" layoutY="353.0" minHeight="10.0" mnemonicParsing="false" onAction="#btnGolgiApparatus" opacity="0.0" prefHeight="11.0" prefWidth="76.0" text="Button" />
