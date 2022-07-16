@@ -63,13 +63,22 @@ public class menuController{
 
     @FXML
     void helpBtnPressed(ActionEvent event) {
-
+    	Alert alert = new Alert(AlertType.INFORMATION);
+    	alert.setTitle("Help");
+    	alert.setHeaderText("The goal of this application is to help users understand more about cells");
+    	alert.setContentText("CELL COMPONENT - shows you the components of each cell type\nCELL DIVISION - show you how cells divide");
+    	alert.show();
     }
 
     @FXML
     void quitBtnPressed(ActionEvent event) {
-    	Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    	stage.close();
+    	Alert alert = new Alert(AlertType.CONFIRMATION);
+    	alert.setTitle("Quit");
+    	alert.setContentText("Do you want to quit?");
+    	if(alert.showAndWait().get() == ButtonType.OK) {
+    		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    		stage.close();
+    	}
     }
 
     public menuController(ArrayList<Cell>cells, ArrayList<Component>components) {
