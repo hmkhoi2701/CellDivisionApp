@@ -6,7 +6,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -63,20 +66,17 @@ public class menuController{
 
     @FXML
     void helpBtnPressed(ActionEvent event) {
-    	Alert alert = new Alert(AlertType.INFORMATION);
-    	alert.setTitle("Help");
-    	alert.setHeaderText("The goal of this application is to help users understand more about cells");
-    	alert.setContentText("CELL COMPONENT - shows you the components of each cell type\nCELL DIVISION - show you how cells divide");
-    	alert.show();
     }
 
     @FXML
     void quitBtnPressed(ActionEvent event) {
     	Alert alert = new Alert(AlertType.CONFIRMATION);
+    	Stage stage = (Stage)alert.getDialogPane().getScene().getWindow();
+    	stage.getIcons().add(new Image(Main.class.getResourceAsStream("/guiImages/5470363.png")));
     	alert.setTitle("Quit");
     	alert.setContentText("Do you want to quit?");
     	if(alert.showAndWait().get() == ButtonType.OK) {
-    		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     		stage.close();
     	}
     }
