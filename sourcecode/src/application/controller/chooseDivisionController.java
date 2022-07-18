@@ -31,7 +31,7 @@ public class chooseDivisionController {
     @FXML
     public void initialize() {
     	if (prevChoice.equals("Eu")){
-    		EukaryoticCell eu = new EukaryoticCell("");
+    		Cell eu = new EukaryoticCell("");
     		GrowMethod growMethod = eu.getGrowMethod();
     		ReproduceMethod reproduceMethod = eu.getReproduceMethod();
     		cells.remove(eu);
@@ -94,7 +94,7 @@ public class chooseDivisionController {
 			buttonBox.getChildren().add(cellMeiosis);
     	}
     	if (prevChoice.equals("Pro")) {
-    		ProkaryoticCell pro = new ProkaryoticCell("");
+    		Cell pro = new ProkaryoticCell("");
     		GrowMethod growMethod = pro.getGrowMethod();
     		ReproduceMethod reproduceMethod = pro.getReproduceMethod();
     		cells.remove(pro);
